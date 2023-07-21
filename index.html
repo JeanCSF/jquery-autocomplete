@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            height: 100vh;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #btn {
+            margin-top: 20px;
+        }
+
+        #caixa {
+            position: fixed;
+            bottom: 25%;
+            top: 25%;
+            overflow-y: scroll;
+            border: 1px solid #212121;
+            width: 70%;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+        }
+
+        #jqueryAutocomplete {
+            position: absolute;
+            top: 10%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <form action="" method="post">
+            <input type="text" id="jqueryAutocomplete" placeholder="busca">
+        </form>
+    </header>
+    <main>
+        <div id="caixa" class="espaco">
+        </div>
+
+    </main>
+
+    <script defer src="main.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#jqueryAutocomplete").autocomplete({
+                source: 'database.php' 
+            });
+        });
+    </script>
+</body>
+
+</html>
